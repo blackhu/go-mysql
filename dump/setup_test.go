@@ -3,7 +3,7 @@ package dump
 import (
 	"flag"
 
-	"github.com/go-mysql-org/go-mysql/mysql"
+	"github.com/blackhu/go-mysql/mysql"
 )
 
 var execution = flag.String("exec", "mysqldump", "mysqldump execution path")

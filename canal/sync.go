@@ -4,9 +4,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/go-mysql-org/go-mysql/mysql"
-	"github.com/go-mysql-org/go-mysql/replication"
-	"github.com/go-mysql-org/go-mysql/schema"
+	"github.com/blackhu/go-mysql/mysql"
+	"github.com/blackhu/go-mysql/replication"
+	"github.com/blackhu/go-mysql/schema"
 	"github.com/pingcap/errors"
 	"github.com/pingcap/tidb/pkg/parser/ast"
 )
@@ -93,7 +93,7 @@ func (c *Canal) runSyncBinlog() error {
 				return errors.Trace(err)
 			}
 		case *replication.RowsEvent:
-			//support OnRow SavePos
+			// //support OnRow SavePos
 			savePos = true
 			force = true
 			// we only focus row based event

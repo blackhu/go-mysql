@@ -13,8 +13,8 @@ import (
 	"net"
 	"sync"
 
-	. "github.com/go-mysql-org/go-mysql/mysql"
-	"github.com/go-mysql-org/go-mysql/utils"
+	. "github.com/blackhu/go-mysql/mysql"
+	"github.com/blackhu/go-mysql/utils"
 	"github.com/klauspost/compress/zstd"
 	"github.com/pingcap/errors"
 )
