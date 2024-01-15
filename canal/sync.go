@@ -104,6 +104,9 @@ func (c *Canal) runSyncBinlog() error {
 			}
 			continue
 		case *replication.TransactionPayloadEvent:
+			// //support OnRow SavePos
+			savePos = true
+			force = true
 			// handle subevent row by row
 			ev := ev.Event.(*replication.TransactionPayloadEvent)
 			for _, subEvent := range ev.Events {
