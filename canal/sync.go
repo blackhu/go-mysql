@@ -93,6 +93,9 @@ func (c *Canal) runSyncBinlog() error {
 				return errors.Trace(err)
 			}
 		case *replication.RowsEvent:
+			//support OnRow SavePos
+			savePos = true
+			force = true
 			// we only focus row based event
 			err = c.handleRowsEvent(ev)
 			if err != nil {
