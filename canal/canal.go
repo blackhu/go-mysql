@@ -221,7 +221,7 @@ func (c *Canal) run() error {
 	defer func() {
 		c.cancel()
 	}()
-
+	fmt.Println("start run******")
 	c.master.UpdateTimestamp(uint32(time.Now().Unix()))
 
 	if !c.dumped {
