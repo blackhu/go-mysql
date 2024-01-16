@@ -1,6 +1,7 @@
 package canal
 
 import (
+	"fmt"
 	"sync/atomic"
 	"time"
 
@@ -82,6 +83,7 @@ func (c *Canal) runSyncBinlog() error {
 		// For RowsEvent, we can't save the position until meeting XIDEvent
 		// which tells the whole transaction is over.
 		// TODO: If we meet any DDL query, we must save too.
+		fmt.Printf("*****ev.Event: %T\n", ev.Event)
 		switch e := ev.Event.(type) {
 		case *replication.RotateEvent:
 			pos.Name = string(e.NextLogName)
